@@ -16,4 +16,5 @@ public class CircleArea {
 		System.out.printf("Result : %.2f", result);
 
 	}
+
 }

@@ -1,7 +1,7 @@
 package lab6;
 
 public interface EmployeeInterface {
-	public double calSalary(int hour, double rate);
+  public double calSalary(int hour, double rate);
 
-	public void showDetails();
+  public void showDetails();
 }

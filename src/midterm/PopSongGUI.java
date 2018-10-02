@@ -1,97 +1,102 @@
 package midterm;
 
-import java.awt.*;
-import java.awt.event.*;
-
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class PopSongGUI {
 
-	private JFrame frame;
-	private JPanel mainPanel, contentPanel, buttonPanel;
-	private JButton nextButton, previousButton;
-	private JLabel titleLabel, artistLabel;
-	private JTextField titleTf, artistTf;
+  private JFrame frame;
+  private JPanel mainPanel, contentPanel, buttonPanel;
+  private JButton nextButton, previousButton;
+  private JLabel titleLabel, artistLabel;
+  private JTextField titleTf, artistTf;
 
-	private ActionListener actionListener = new ActionListener() {
+  private ActionListener actionListener = new ActionListener() {
 
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			Song p1 = new PopSong("Heal the World", "Michael Jackson");
-			Song p2 = new PopSong("Torn", "Natalie Imbruglia");
+    @Override
+    public void actionPerformed(ActionEvent e) {
+      Song p1 = new PopSong("Heal the World", "Michael Jackson");
+      Song p2 = new PopSong("Torn", "Natalie Imbruglia");
 
-			if (e.getSource() == nextButton) {
-				titleTf.setText(p2.getTitle());
-				artistTf.setText(p2.getArtist());
-				nextButton.setEnabled(false);
-				previousButton.setEnabled(true);
-			}
+      if (e.getSource() == nextButton) {
+        titleTf.setText(p2.getTitle());
+        artistTf.setText(p2.getArtist());
+        nextButton.setEnabled(false);
+        previousButton.setEnabled(true);
+      }
 
-			if (e.getSource() == previousButton) {
-				titleTf.setText(p1.getTitle());
-				artistTf.setText(p1.getArtist());
-				nextButton.setEnabled(true);
-				previousButton.setEnabled(false);
-			}
+      if (e.getSource() == previousButton) {
+        titleTf.setText(p1.getTitle());
+        artistTf.setText(p1.getArtist());
+        nextButton.setEnabled(true);
+        previousButton.setEnabled(false);
+      }
 
-		}
+    }
 
-	};
+  };
 
-	public void init() {
-		frame = new JFrame("Select Song");
+  public void init() {
+    frame = new JFrame("Select Song");
 
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		mainPanel = new JPanel(new BorderLayout());
+    mainPanel = new JPanel(new BorderLayout());
 
-		contentPanel = new JPanel(new GridLayout(2, 2));
+    contentPanel = new JPanel(new GridLayout(2, 2));
 
-		titleLabel = new JLabel("Title:");
-		titleTf = new JTextField(20);
-		artistLabel = new JLabel("Artist:");
-		artistTf = new JTextField(20);
+    titleLabel = new JLabel("Title:");
+    titleTf = new JTextField(20);
+    artistLabel = new JLabel("Artist:");
+    artistTf = new JTextField(20);
 
-		titleTf.setEditable(false);
-		artistTf.setEditable(false);
+    titleTf.setEditable(false);
+    artistTf.setEditable(false);
 
-		contentPanel.add(titleLabel);
-		contentPanel.add(titleTf);
-		contentPanel.add(artistLabel);
-		contentPanel.add(artistTf);
+    contentPanel.add(titleLabel);
+    contentPanel.add(titleTf);
+    contentPanel.add(artistLabel);
+    contentPanel.add(artistTf);
 
-		Song p1 = new PopSong("Heal the World", "Michael Jackson");
+    Song p1 = new PopSong("Heal the World", "Michael Jackson");
 
-		titleTf.setText(p1.getTitle());
-		artistTf.setText(p1.getArtist());
+    titleTf.setText(p1.getTitle());
+    artistTf.setText(p1.getArtist());
 
-		buttonPanel = new JPanel();
+    buttonPanel = new JPanel();
 
-		nextButton = new JButton("Next");
-		previousButton = new JButton("Previous");
+    nextButton = new JButton("Next");
+    previousButton = new JButton("Previous");
 
-		nextButton.addActionListener(actionListener);
-		previousButton.addActionListener(actionListener);
+    nextButton.addActionListener(actionListener);
+    previousButton.addActionListener(actionListener);
 
-		previousButton.setEnabled(false);
+    previousButton.setEnabled(false);
 
-		buttonPanel.add(previousButton);
-		buttonPanel.add(nextButton);
+    buttonPanel.add(previousButton);
+    buttonPanel.add(nextButton);
 
-		mainPanel.add(contentPanel, BorderLayout.NORTH);
-		mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+    mainPanel.add(contentPanel, BorderLayout.NORTH);
+    mainPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-		frame.add(mainPanel);
+    frame.add(mainPanel);
 
-		frame.pack();
-		frame.setResizable(false);
-		frame.setVisible(true);
-	}
+    frame.pack();
+    frame.setResizable(false);
+    frame.setVisible(true);
+  }
 
-	public static void main(String[] args) {
-		PopSongGUI popsong = new PopSongGUI();
-		popsong.init();
+  public static void main(String[] args) {
+    PopSongGUI popsong = new PopSongGUI();
+    popsong.init();
 
-	}
+  }
 
 }

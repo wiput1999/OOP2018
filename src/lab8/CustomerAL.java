@@ -1,40 +1,48 @@
-package lab6;
+package lab8;
 
+import java.util.ArrayList;
 import lab4.Account;
 
-public class Customer {
+public class CustomerAL {
 
-  private String firstName;
-  private String lastName;
-  private Account acct;
+    private String firstName;
+    private String lastName;
+    private ArrayList acct;
+    private int numOfAccount = 0;
 
-  public Customer(String fName, String lName) {
-    firstName = fName;
-    lastName = lName;
-  }
+    public CustomerAL(String fName, String lName) {
+        firstName = fName;
+        lastName = lName;
+        acct = new ArrayList();
+    }
 
-  public String getFirstName() {
-    return firstName;
-  }
+    public String getFirstName() {
+        return firstName;
+    }
 
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-  public String getLastName() {
-    return lastName;
-  }
+    public String getLastName() {
+        return lastName;
+    }
 
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-  public Account getAccount() {
-    return acct;
-  }
+    public Account getAccount(int index) {
+        return (Account) acct.get(index);
+    }
 
-  public void setAccount(Account acct) {
-    this.acct = acct;
-  }
+    public void addAccount(Account ac) {
+        acct.add(ac);
+        numOfAccount += 1;
+    }
+
+    public int getNumOfAccount() {
+        return acct.size();
+    }
 
 }

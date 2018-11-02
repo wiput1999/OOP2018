@@ -12,7 +12,7 @@ package lecture8;
 public class SimpleCalculator extends javax.swing.JFrame {
 
     private double number1 = 0.0;
-    
+
     /**
      * Creates new form SimpleCalculator
      */

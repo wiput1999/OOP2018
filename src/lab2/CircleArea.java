@@ -3,17 +3,18 @@ package lab2;
 import java.util.Scanner;
 
 public class CircleArea {
-  public static void main(String args[]) {
-    Scanner input = new Scanner(System.in);
 
-    double radius = input.nextDouble();
+    public static void main(String args[]) {
+        Scanner input = new Scanner(System.in);
 
-    double result = Math.PI * Math.pow(radius, 2);
+        double radius = input.nextDouble();
 
-    input.close();
+        double result = Math.PI * Math.pow(radius, 2);
 
-    System.out.printf("Result : %.2f", result);
+        input.close();
 
-  }
+        System.out.printf("Result : %.2f", result);
+
+    }
 
 }

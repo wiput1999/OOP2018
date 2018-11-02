@@ -11,8 +11,8 @@ public class Test {
         objs.add(2);
         objs.add("Hi");
         objs.add('A');
-        
-        for(Object item: objs) {
+
+        for (Object item : objs) {
             int value = (Integer) item;
         }
 

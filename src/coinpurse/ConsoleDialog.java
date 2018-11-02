@@ -8,8 +8,8 @@ import java.util.Scanner;
  * balance.
  */
 public class ConsoleDialog {
-    // default currency for this dialog
 
+    // default currency for this dialog
     public static final String CURRENCY = "Baht";
     // use a single java.util.Scanner object for reading all input
     private static Scanner console = new Scanner(System.in);
@@ -117,7 +117,7 @@ public class ConsoleDialog {
             double amount = scanline.nextDouble();
             Coin[] coins = purse.withdraw(amount);
             if (coins == null) {
-                System.out.printf("Sorry, couldn't withdraw %.2g %s\n", amount, CURRENCY);
+                System.out.printf("Sorry, couldn't withdraw %g %s\n", amount, CURRENCY);
             } else {
                 System.out.print("You withdrew:");
                 for (int k = 0; k < coins.length; k++) {

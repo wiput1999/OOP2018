@@ -15,6 +15,7 @@ public class CheckingAccount extends Account {
 
     @Override
     public boolean withdraw(double amount) {
+        //noinspection Duplicates
         if ((credit + balance) - amount >= 0) {
             if (balance < amount) {
                 credit -= (amount - balance);

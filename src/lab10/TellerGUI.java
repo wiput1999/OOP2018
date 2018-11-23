@@ -16,7 +16,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import lab4.Account;
 
 public class TellerGUI implements ActionListener {
 
@@ -135,9 +134,6 @@ public class TellerGUI implements ActionListener {
                     account.withdraw(amount);
                 }
                 tf1.setText(String.valueOf(account.getBalance()));
-                break;
-            case "Exit":
-                System.exit(0);
                 break;
         }
 

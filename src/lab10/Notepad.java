@@ -63,8 +63,7 @@ public class Notepad {
                     int option = save.showSaveDialog(null);
                     if (option == JFileChooser.APPROVE_OPTION) {
                         try {
-                            try (
-                                    BufferedWriter out = new BufferedWriter(new FileWriter(save.getSelectedFile().getPath()))) {
+                            try (BufferedWriter out = new BufferedWriter(new FileWriter(save.getSelectedFile().getPath()))) {
                                 out.write(ta1.getText());
                             }
                         } catch (IOException ex) {
